@@ -1,5 +1,4 @@
-{pkgs, ...} :
-{
+{ pkgs, ... }: {
   colorschemes.nightfox.enable = true;
   colorschemes.nightfox.flavor = "nordfox";
 
@@ -29,7 +28,8 @@
       action.__raw = "require('haskell-tools').repl.toggle";
     }
     {
-      options.desc = "Hoogle search for the type signature of the definition under the cursor";
+      options.desc =
+        "Hoogle search for the type signature of the definition under the cursor";
       mode = "n";
       options.silent = true;
       key = "<leader>hs";
@@ -46,19 +46,15 @@
   ];
 
   keymapsOnEvents = {
-    TermOpen = [
-      {
-        options.desc = "ESC to normal mode";
-        mode = "t";
-        key = "<esc>";
-        action = ''<C-\><C-n>'';
-      }
-    ];
+    TermOpen = [{
+      options.desc = "ESC to normal mode";
+      mode = "t";
+      key = "<esc>";
+      action = "<C-\\><C-n>";
+    }];
   };
 
-  localOpts = {
-    number = true;
-  };
+  localOpts = { number = true; };
 
   opts = {
     expandtab = true;
@@ -70,9 +66,7 @@
   };
 
   plugins = {
-    telescope = {
-      enable = true;
-    };
+    telescope = { enable = true; };
     gitsigns.enable = true;
     lualine = {
       enable = true;
@@ -101,7 +95,7 @@
         clangd.enable = true;
         nil-ls = {
           enable = true;
-          settings.formatting.command = ["nixfmt"];
+          settings.formatting.command = [ "nixfmt" ];
         };
       };
     };
@@ -109,12 +103,16 @@
       enable = true;
       settings = {
         sources = [
-          { name = "spell"; }
+          {
+            name = "spell";
+          }
           # { name = "async_path"; }
           # { name = "fish"; }
           { name = "nvim_lsp"; }
           { name = "buffer"; }
-          { name = "treesitter"; }
+          {
+            name = "treesitter";
+          }
           # { name = "snippy"; }
           { name = "luasnip"; }
         ];
@@ -123,7 +121,8 @@
         # is selected. Tab cycles through completions, while
         # automatically applying them, however snippets require
         # enter to expand.
-        snippet.expand = ''function(args) require'luasnip'.lsp_expand(args.body); end'';
+        snippet.expand =
+          "function(args) require'luasnip'.lsp_expand(args.body); end";
         mapping = {
           "<C-p>" = "cmp.mapping.select_prev_item()";
           "<C-n>" = "cmp.mapping.select_next_item()";
