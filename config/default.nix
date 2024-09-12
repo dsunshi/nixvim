@@ -1,9 +1,9 @@
 {pkgs, ...} :
 {
-  colorschemes.kanagawa.enable = true;
+  colorschemes.gruvbox.enable = true;
 
   # Import all your configuration modules here
-  imports = [ ./bufferline.nix ];
+  #imports = [ ./bufferline.nix ];
 
   globals = {
     mapleader = " ";
@@ -18,6 +18,14 @@
       options.silent = true;
       key = "<leader>ff";
       action = ":Telescope find_files<cr>";
+    }
+    # Haskell
+    {
+      options.desc = "Toggle GHCi repl for the current buffer";
+      mode = "n";
+      options.silent = true;
+      key = "<leader>rr";
+      action.__raw = "require('haskell-tools').repl.toggle";
     }
   ];
 
@@ -49,6 +57,18 @@
     telescope = {
       enable = true;
     };
+    gitsigns.enable = true;
+    lualine = {
+      enable = true;
+      settings.options = {
+        icons_enabled = false;
+        section_separators.left = "";
+        section_separators.right = "";
+        component_separators.left = "|";
+        component_separators.right = "|";
+      };
+    };
+    trouble.enable = true;
     treesitter = {
       enable = true;
       settings = {
