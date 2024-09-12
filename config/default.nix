@@ -26,8 +26,8 @@
       {
         options.desc = "ESC to normal mode";
         mode = "t";
-	key = "<esc>";
-	action = ''<C-\><C-n>'';
+        key = "<esc>";
+        action = ''<C-\><C-n>'';
       }
     ];
   };
@@ -68,7 +68,7 @@
         };
       };
     };
-      cmp = {
+    cmp = {
       enable = true;
       settings = {
         sources = [
@@ -137,5 +137,12 @@
 
   extraPlugins = with pkgs; [
     vimPlugins.haskell-tools-nvim
+    vimPlugins.nvim-dap
   ];
+
+  performance = {
+    combinePlugins.enable = true;
+    byteCompileLua.enable = true;
+  };
+
 }
