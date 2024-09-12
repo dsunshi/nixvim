@@ -1,6 +1,7 @@
 {pkgs, ...} :
 {
-  colorschemes.gruvbox.enable = true;
+  colorschemes.nightfox.enable = true;
+  colorschemes.nightfox.flavor = "nordfox";
 
   # Import all your configuration modules here
   #imports = [ ./bufferline.nix ];
@@ -26,6 +27,21 @@
       options.silent = true;
       key = "<leader>rr";
       action.__raw = "require('haskell-tools').repl.toggle";
+    }
+    {
+      options.desc = "Hoogle search for the type signature of the definition under the cursor";
+      mode = "n";
+      options.silent = true;
+      key = "<leader>hs";
+      action.__raw = "require('haskell-tools').hoogle.hoogle_signature";
+    }
+    # codeLenses
+    {
+      options.desc = "Run codeLenses";
+      mode = "n";
+      options.silent = true;
+      key = "<leader>cl";
+      action.__raw = "vim.lsp.codelens.run";
     }
   ];
 
@@ -69,6 +85,7 @@
       };
     };
     trouble.enable = true;
+    toggleterm.enable = true;
     treesitter = {
       enable = true;
       settings = {
