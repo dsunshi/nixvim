@@ -1,6 +1,5 @@
 { pkgs, ... }: {
-  colorschemes.nightfox.enable = true;
-  colorschemes.nightfox.flavor = "nordfox";
+  colorschemes.catppuccin.enable = true;
 
   # Import all your configuration modules here
   #imports = [ ./bufferline.nix ];
@@ -42,6 +41,21 @@
       options.silent = true;
       key = "<leader>cl";
       action.__raw = "vim.lsp.codelens.run";
+    }
+    # Disable F15
+    {
+      options.desc = "NOP";
+      mode = "n";
+      options.silent = true;
+      key = "<F15>";
+      action = "<Nop>";
+    }
+    {
+      options.desc = "NOP";
+      mode = "i";
+      options.silent = true;
+      key = "<F15>";
+      action = "<Nop>";
     }
   ];
 
