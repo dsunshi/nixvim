@@ -27,8 +27,7 @@
       action.__raw = "require('haskell-tools').repl.toggle";
     }
     {
-      options.desc =
-        "Hoogle search for the type signature of the definition under the cursor";
+      options.desc = "Hoogle search for the type signature of the definition under the cursor";
       mode = "n";
       options.silent = true;
       key = "<leader>hs";
@@ -41,6 +40,14 @@
       options.silent = true;
       key = "<leader>cl";
       action.__raw = "vim.lsp.codelens.run";
+    }
+    # Oil
+    {
+      options.desc = "Open parent directory";
+      mode = "n";
+      options.silent = true;
+      key = "-";
+      action = "<cmd>Oil<cr>";
     }
     # Disable F15
     {
@@ -82,6 +89,7 @@
   plugins = {
     telescope = { enable = true; };
     gitsigns.enable = true;
+    oil.enable = true;
     lualine = {
       enable = true;
       settings.options = {
