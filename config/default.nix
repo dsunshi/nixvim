@@ -8,7 +8,10 @@
   
 
   # Import all your configuration modules here
-  imports = [ ./bufferline.nix ];
+  imports = [
+    ./bufferline.nix
+    ./which-key.nix
+  ];
 
   globals = {
     mapleader = " ";
@@ -89,7 +92,7 @@
     shiftwidth = 4;
     tabstop = 4;
     textwidth = 120;
-    # colorcolumn = 120; # TODO: nixvim wants a number, and neovim wants a string
+    colorcolumn = "120";
   };
 
   plugins = {
