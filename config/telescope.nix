@@ -23,23 +23,23 @@
     }
   ];
 
-  LspAttach = [
-    {
-      key = "<leader>Lr";
-      action.__raw = "require('telescope.builtin').lsp_references";
-      options.desc = "View references";
-    }
-    {
-      key = "<leader>Ls";
-      action.__raw = "require('telescope.builtin').lsp_document_symbols";
-      options.desc = "View document symbols";
-    }
-    {
-      key = "<leader>LS";
-      action.__raw = "require('telescope.builtin').lsp_workspace_symbols";
-      options.desc = "View workspace symbols";
-    }
-  ];
+  # LspAttach = [
+  #   {
+  #     key = "<leader>Lr";
+  #     action.__raw = "require('telescope.builtin').lsp_references";
+  #     options.desc = "View references";
+  #   }
+  #   {
+  #     key = "<leader>Ls";
+  #     action.__raw = "require('telescope.builtin').lsp_document_symbols";
+  #     options.desc = "View document symbols";
+  #   }
+  #   {
+  #     key = "<leader>LS";
+  #     action.__raw = "require('telescope.builtin').lsp_workspace_symbols";
+  #     options.desc = "View workspace symbols";
+  #   }
+  # ];
 
   plugins.telescope = {
     enable = true;
