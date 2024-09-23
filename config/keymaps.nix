@@ -12,14 +12,7 @@
     # Disable F15 ;)
     {
       options.desc = "NOP";
-      mode = "n";
-      options.silent = true;
-      key = "<F15>";
-      action = "<Nop>";
-    }
-    {
-      options.desc = "NOP";
-      mode = "i";
+      mode = [ "n" "i" "v" "s" "t" "x" "o" "!" "l" "c" ];
       options.silent = true;
       key = "<F15>";
       action = "<Nop>";
