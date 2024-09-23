@@ -4,7 +4,6 @@ let
   columnsize = 120;
 in {
 
-  # Import all your configuration modules here
   imports = [
     ./colorscheme.nix
     ./bufferline.nix
@@ -12,6 +11,7 @@ in {
     ./gitsigns.nix
     ./haskell.nix
     ./icons.nix
+    ./keymap.nix
     ./lsp.nix
     ./lualine.nix
     ./oil.nix
@@ -25,41 +25,6 @@ in {
   globals = {
     mapleader = " ";
     maplocalleader = " ";
-  };
-
-  keymaps = [
-    # codeLenses
-    {
-      options.desc = "Run codeLenses";
-      mode = "n";
-      options.silent = true;
-      key = "<leader>cl";
-      action.__raw = "vim.lsp.codelens.run";
-    }
-    # Disable F15 ;)
-    {
-      options.desc = "NOP";
-      mode = "n";
-      options.silent = true;
-      key = "<F15>";
-      action = "<Nop>";
-    }
-    {
-      options.desc = "NOP";
-      mode = "i";
-      options.silent = true;
-      key = "<F15>";
-      action = "<Nop>";
-    }
-  ];
-
-  keymapsOnEvents = {
-    TermOpen = [{
-      options.desc = "ESC to normal mode";
-      mode = "t";
-      key = "<esc>";
-      action = "<C-\\><C-n>";
-    }];
   };
 
   localOpts = { number = true; };
