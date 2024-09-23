@@ -9,7 +9,9 @@ in {
     ./bufferline.nix
     ./cmp.nix
     ./gitsigns.nix
+    ./auto-sessions.nix
     ./haskell.nix
+    ./lazygit.nix
     ./icons.nix
     ./keymaps.nix
     ./lsp.nix
