@@ -11,8 +11,9 @@ in {
     ./gitsigns.nix
     ./haskell.nix
     ./icons.nix
-    ./keymap.nix
+    ./keymaps.nix
     ./lsp.nix
+    ./startup.nix
     ./lualine.nix
     ./oil.nix
     ./telescope.nix
