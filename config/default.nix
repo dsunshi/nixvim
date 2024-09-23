@@ -7,6 +7,7 @@
     ./cmp.nix
     ./gitsigns.nix
     ./haskell.nix
+    ./icons.nix
     ./lsp.nix
     ./lualine.nix
     ./oil.nix
@@ -60,12 +61,18 @@
   localOpts = { number = true; };
 
   opts = {
+    relativenumber = true;
     expandtab = true;
     showmatch = true;
+    autoident = true;
     shiftwidth = 4;
     tabstop = 4;
     textwidth = 120;
     colorcolumn = "120";
+    ignorecase = true;
+    smartcase = true;
+    cursorline = true;
+    signcolumn = "yes";
   };
 
   extraPlugins = with pkgs;
