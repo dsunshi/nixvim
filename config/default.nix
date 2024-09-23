@@ -50,6 +50,7 @@ in {
 
   extraPlugins = with pkgs;
     [
+      vimPlugins.vim-table-mode
       (vimUtils.buildVimPlugin {
         name = "render-markdown.nvim";
         src = fetchFromGitHub {
