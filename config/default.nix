@@ -1,4 +1,8 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+let
+  tabsize = 2;
+  columnsize = 120;
+in {
 
   # Import all your configuration modules here
   imports = [
@@ -64,11 +68,11 @@
     relativenumber = true;
     expandtab = true;
     showmatch = true;
-    autoident = true;
-    shiftwidth = 4;
-    tabstop = 4;
-    textwidth = 120;
-    colorcolumn = "120";
+    autoindent = true;
+    shiftwidth = tabsize;
+    tabstop = tabsize;
+    textwidth = columnsize;
+    colorcolumn = builtins.toString columnsize;
     ignorecase = true;
     smartcase = true;
     cursorline = true;
