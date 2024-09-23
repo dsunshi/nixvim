@@ -5,19 +5,20 @@ let
 in {
 
   imports = [
-    ./colorscheme.nix
+    ./auto-sessions.nix
     ./bufferline.nix
     ./cmp.nix
+    ./colorscheme.nix
+    ./fidget.nix
     ./gitsigns.nix
-    ./auto-sessions.nix
     ./haskell.nix
-    ./lazygit.nix
     ./icons.nix
     ./keymaps.nix
+    ./lazygit.nix
     ./lsp.nix
-    ./startup.nix
     ./lualine.nix
     ./oil.nix
+    ./startup.nix
     ./telescope.nix
     ./toggleterm.nix
     ./treesitter.nix
