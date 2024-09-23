@@ -23,23 +23,25 @@
     }
   ];
 
-  # LspAttach = [
-  #   {
-  #     key = "<leader>Lr";
-  #     action.__raw = "require('telescope.builtin').lsp_references";
-  #     options.desc = "View references";
-  #   }
-  #   {
-  #     key = "<leader>Ls";
-  #     action.__raw = "require('telescope.builtin').lsp_document_symbols";
-  #     options.desc = "View document symbols";
-  #   }
-  #   {
-  #     key = "<leader>LS";
-  #     action.__raw = "require('telescope.builtin').lsp_workspace_symbols";
-  #     options.desc = "View workspace symbols";
-  #   }
-  # ];
+  keymapsOnEvents = {
+    LspAttach = [
+      {
+        options.desc = "View references";
+        key = "<leader>lr";
+        action.__raw = "require('telescope.builtin').lsp_references";
+      }
+      {
+        options.desc = "View document symbols";
+        key = "<leader>ld";
+        action.__raw = "require('telescope.builtin').lsp_document_symbols";
+      }
+      {
+        options.desc = "View workspace symbols";
+        key = "<leader>lw";
+        action.__raw = "require('telescope.builtin').lsp_workspace_symbols";
+      }
+    ];
+  };
 
   plugins.telescope = {
     enable = true;

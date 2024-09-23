@@ -24,6 +24,7 @@
       key = "<F15>";
       action = "<Nop>";
     }
+    # Window management
     {
       options.desc = "Split window vertically";
       mode = "n";
