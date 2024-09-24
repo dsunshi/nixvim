@@ -5,7 +5,7 @@ let
 in {
 
   imports = [
-    ./auto-sessions.nix
+    # ./auto-sessions.nix
     ./bufferline.nix
     ./cmp.nix
     ./colorscheme.nix
