@@ -8,6 +8,7 @@
       servers = {
         hls.enable = true;
         clangd.enable = true;
+        openscad-lsp.enable = true;
         marksman.enable = true;
         nil-ls = {
           enable = true;
