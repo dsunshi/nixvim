@@ -1,7 +1,7 @@
 { pkgs, ... }:
 let
   tabsize = 2;
-  columnsize = 120;
+  # columnsize = 120;
 in {
 
   imports = [
@@ -22,6 +22,7 @@ in {
     ./startup.nix
     ./telescope.nix
     ./toggleterm.nix
+    ./smartcolumn.nix
     ./treesitter.nix
     ./trouble.nix
     ./which-key.nix
@@ -41,8 +42,8 @@ in {
     autoindent = true;
     shiftwidth = tabsize;
     tabstop = tabsize;
-    textwidth = columnsize;
-    colorcolumn = builtins.toString columnsize;
+    # textwidth = columnsize;
+    # colorcolumn = builtins.toString columnsize;
     ignorecase = true;
     smartcase = true;
     cursorline = true;
