@@ -3,8 +3,8 @@
     enable = true;
 
     colors = {
-      background = "#ffffff";
-      foldedSection = "#ffffff";
+      # background = "#ffffff";
+      # foldedSection = "#ffffff";
     };
 
     sections = {
@@ -37,8 +37,8 @@
         margin = 5;
         content = [
           [ " Find File" "Telescope find_files" "ff" ]
-          [ "󰍉 Find Word" "Telescope live_grep" "fr" ]
-          [ " Recent Files" "Telescope oldfiles" "fg" ]
+          [ "󰍉 Find Word" "Telescope live_grep" "fg" ]
+          [ " Recent Files" "Telescope oldfiles" "fr" ]
           [ " File Browser" "Telescope file_browser" "fe" ]
         ];
         highlight = "string";

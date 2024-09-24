@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       colorcolumn = "120";
-      disabled_filetypes = [ "markdown" ];
+      disabled_filetypes = [ "markdown" "startup" ];
     };
   };
 }
