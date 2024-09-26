@@ -50,8 +50,17 @@ in {
     signcolumn = "yes";
   };
 
+  keymaps = [{
+    options.desc = "Fenced Markdown code-block editor";
+    mode = "n";
+    options.silent = true;
+    key = "<leader>fe";
+    action.__raw = "require('femaco.edit').edit_code_block";
+  }];
+
   extraPlugins = with pkgs; [
     vimPlugins.vim-table-mode
+    vimPlugins.nvim-FeMaco-lua
     (vimUtils.buildVimPlugin {
       name = "render-markdown.nvim";
       src = fetchFromGitHub {
