@@ -19,10 +19,11 @@ in {
     ./lualine.nix
     ./nvim-surround.nix
     ./oil.nix
+    ./otter.nix
+    ./smartcolumn.nix
     ./startup.nix
     ./telescope.nix
     ./toggleterm.nix
-    ./smartcolumn.nix
     ./treesitter.nix
     ./trouble.nix
     ./which-key.nix
@@ -49,16 +50,6 @@ in {
     cursorline = true;
     signcolumn = "yes";
   };
-
-  keymaps = [{
-    options.desc = "Fenced Markdown code-block editor";
-    mode = "n";
-    options.silent = true;
-    key = "<leader>fe";
-    action.__raw = "require('femaco.edit').edit_code_block";
-  }];
-
-  plugins.otter.enable = true;
 
   extraPlugins = with pkgs; [
     vimPlugins.vim-table-mode
