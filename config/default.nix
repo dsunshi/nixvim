@@ -58,9 +58,10 @@ in {
     action.__raw = "require('femaco.edit').edit_code_block";
   }];
 
+  plugins.otter.enable = true;
+
   extraPlugins = with pkgs; [
     vimPlugins.vim-table-mode
-    vimPlugins.nvim-FeMaco-lua
     (vimUtils.buildVimPlugin {
       name = "render-markdown.nvim";
       src = fetchFromGitHub {
