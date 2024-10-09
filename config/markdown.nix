@@ -7,8 +7,8 @@
       src = fetchFromGitHub {
         owner = "MeanderingProgrammer";
         repo = "render-markdown.nvim";
-        rev = "4bf3247dfd06844088768b37cf1976efef1bca26"; # 7.0.0 release
-        hash = "sha256-U1/6FLCfAkAm692nqMl1qQh6Z1og/Gqoe3NZpa5py9g=";
+        rev = "fe1002fddc61207e4ef4325d4bc0ca33697bbc7a"; # 7.3.0 release
+        hash = "sha256-n/sMiz6ztfzAwidL7CaRaUW5m07i9i6cemthE1L4Pes=";
       };
     })
   ];
