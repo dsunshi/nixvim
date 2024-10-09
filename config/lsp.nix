@@ -9,7 +9,7 @@
         hls.enable = true;
         clangd.enable = true;
         openscad-lsp.enable = true;
-        pyright.enable = true;
+        pylsp.enable = true;
         marksman.enable = true;
         nil-ls = {
           enable = true;
