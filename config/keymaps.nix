@@ -9,12 +9,34 @@
       key = "<leader>cl";
       action.__raw = "vim.lsp.codelens.run";
     }
+    # Make
+    {
+      options.desc = "Run make";
+      mode = "n";
+      options.silent = true;
+      key = "<leader>mm";
+      action = "<cmd>make<CR>";
+    }
+    {
+      options.desc = "Run make clean";
+      mode = "n";
+      options.silent = true;
+      key = "<leader>mc";
+      action = "<cmd>make clean<CR>";
+    }
     # Disable F15 ;)
     {
-      options.desc = "NOP";
+      options.desc = "F15 NOP";
       mode = [ "n" "i" "v" "s" "t" "x" "o" "!" "l" "c" ];
       options.silent = true;
       key = "<F15>";
+      action = "<Nop>";
+    }
+    {
+      options.desc = "F15 NOP";
+      mode = [ "n" "i" "v" "s" "t" "x" "o" "!" "l" "c" ];
+      options.silent = true;
+      key = "<S-F15>";
       action = "<Nop>";
     }
     # Window management
