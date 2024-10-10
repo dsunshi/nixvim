@@ -15,7 +15,7 @@
       mode = "n";
       options.silent = true;
       key = "<leader>mm";
-      action = "<cmd>make<CR>";
+      action = "<cmd>make -j`nproc`<CR>";
     }
     {
       options.desc = "Run make clean";
