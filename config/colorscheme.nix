@@ -7,6 +7,7 @@
   #   green = "#fab387"; # Mocha peach
   # };
   colorscheme = "kanagawa-paper";
+  plugins.transparent = { enable = true; };
   extraPlugins = with pkgs;
     [
       (vimUtils.buildVimPlugin {

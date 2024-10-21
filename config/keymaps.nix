@@ -1,14 +1,6 @@
 {
   # Keymaps not directly related to specific plugins
   keymaps = [
-    # codeLenses
-    {
-      options.desc = "Run codeLenses";
-      mode = "n";
-      options.silent = true;
-      key = "<leader>cl";
-      action.__raw = "vim.lsp.codelens.run";
-    }
     # Make
     {
       options.desc = "Run make";
@@ -33,10 +25,24 @@
       action = "<Nop>";
     }
     {
-      options.desc = "F15 NOP";
+      options.desc = "Shift F15 NOP";
       mode = [ "n" "i" "v" "s" "t" "x" "o" "!" "l" "c" ];
       options.silent = true;
       key = "<S-F15>";
+      action = "<Nop>";
+    }
+    {
+      options.desc = "Control F15 NOP";
+      mode = [ "n" "i" "v" "s" "t" "x" "o" "!" "l" "c" ];
+      options.silent = true;
+      key = "<C-F15>";
+      action = "<Nop>";
+    }
+    {
+      options.desc = "Alt F15 NOP";
+      mode = [ "n" "i" "v" "s" "t" "x" "o" "!" "l" "c" ];
+      options.silent = true;
+      key = "<Alt-F15>";
       action = "<Nop>";
     }
     # Window management
@@ -60,6 +66,13 @@
       options.silent = true;
       key = "<leader>sx";
       action = "<cmd>close<CR>";
+    }
+    {
+      options.desc = "Toggle background transparency";
+      mode = "n";
+      options.silent = true;
+      key = "<leader>cl";
+      action = "<cmd>TransparentToggle<CR>";
     }
   ];
 
