@@ -17,9 +17,10 @@
     #  - `..` (the parent directory)
     #  - `.gitignore`
     #  - `.envrc`
+    #  - `.config`
     settings.view_options.is_hidden_file = ''
       function(name, bufnr)
-         return name ~= ".." and name ~= ".envrc" and name ~= ".gitignore" and vim.startswith(name, ".")
+         return name ~= ".." and name ~= ".gitignore" and name ~= ".envrc" and name ~= ".config" and vim.startswith(name, ".")
       end
     '';
   };
