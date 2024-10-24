@@ -5,7 +5,7 @@
       mode = "n";
       options.silent = true;
       key = "<leader>ff";
-      action = ":Telescope find_files<cr>";
+      action = "<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>";
     }
     {
       options.desc = "Find by grep";
