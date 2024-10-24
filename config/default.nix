@@ -9,6 +9,7 @@ in {
     ./bufferline.nix
     ./cmp.nix
     ./colorscheme.nix
+    ./colorizer.nix
     ./fidget.nix
     ./gitsigns.nix
     ./haskell.nix
