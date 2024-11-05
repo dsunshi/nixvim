@@ -39,6 +39,7 @@ in {
   localOpts = { number = true; };
 
   opts = {
+    number = true;
     relativenumber = true;
     expandtab = true;
     showmatch = true;
