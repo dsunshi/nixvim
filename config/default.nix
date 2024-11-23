@@ -38,6 +38,12 @@ in {
 
   localOpts = { number = true; };
 
+  clipboard = {
+    register = "unnamedplus";
+    providers.xclip.enable = true;
+    providers.wl-copy.enable = true;
+  };
+
   opts = {
     number = true;
     relativenumber = true;
