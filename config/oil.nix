@@ -18,7 +18,8 @@
     #  - `.gitignore`
     #  - `.envrc`
     #  - `.config`
-    settings.view_options.is_hidden_file = ''
+    settings.view_options.is_hidden_file = #lua
+      ''
       function(name, bufnr)
          return name ~= ".." and name ~= ".gitignore" and name ~= ".envrc" and name ~= ".config" and vim.startswith(name, ".")
       end

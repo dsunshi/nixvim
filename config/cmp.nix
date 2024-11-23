@@ -22,7 +22,7 @@
         # is selected. Tab cycles through completions, while
         # automatically applying them, however snippets require
         # enter to expand.
-        snippet.expand =
+        snippet.expand = #lua
           "function(args) require'luasnip'.lsp_expand(args.body); end";
         mapping = {
           "<C-p>" = "cmp.mapping.select_prev_item()";
@@ -30,7 +30,8 @@
           "<C-d>" = "cmp.mapping.scroll_docs(-4)";
           "<C-f>" = "cmp.mapping.scroll_docs(4)";
           "<C-e>" = "cmp.mapping.close()";
-          "<C-Space>" = ''
+          "<C-Space>" = #lua
+            ''
             cmp.mapping(function(fallback)
               if cmp.visible() then
                 if require("luasnip").expandable_or_jumpable() then
@@ -45,7 +46,8 @@
                 fallback()
               end
             end)'';
-          "<Tab>" = ''
+          "<Tab>" = #lua
+            ''
             cmp.mapping(function(fallback)
               if cmp.visible() then
                 cmp.select_next_item()
@@ -56,7 +58,8 @@
               end
             end, { "i", "s" })'';
 
-          "<S-Tab>" = ''
+          "<S-Tab>" = #lua
+            ''
             cmp.mapping(function(fallback)
               if cmp.visible() then
                 cmp.select_prev_item()

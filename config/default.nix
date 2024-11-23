@@ -21,6 +21,7 @@ in {
     ./markdown.nix
     ./nvim-surround.nix
     ./oil.nix
+    ./noice.nix
     ./otter.nix
     ./smartcolumn.nix
     ./startup.nix

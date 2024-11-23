@@ -12,16 +12,16 @@
       ignoreDoneAlready = false; # Ignore new tasks that are already complete
       ignoreEmptyMessage =
         false; # Ignore new tasks that don't contain a message
-      clearOnDetach =
         # Clear notification group when LSP server detaches
+      clearOnDetach = #lua
         ''
           function(client_id)
             local client = vim.lsp.get_client_by_id(client_id)
             return client and client.name or nil
           end
         '';
-      notificationGroup =
         # How to get a progress message's notification group key
+      notificationGroup = #lua
         ''
           function(msg) return msg.lsp_client.name end
         '';
@@ -67,7 +67,8 @@
       filter = "info"; # “off”, “error”, “warn”, “info”, “debug”, “trace”
       historySize = 128; # Number of removed messages to retain in history
       overrideVimNotify = true;
-      redirect = ''
+      redirect = #lua
+          ''
         function(msg, level, opts)
           if opts and opts.on_open then
             return require("fidget.integration.nvim-notify").delegate(msg, level, opts)
