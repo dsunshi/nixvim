@@ -1,7 +1,9 @@
-{ _pkgs, ... }:
+{ _pkgs, lib, ... }:
 let
   tabsize = 2;
   # columnsize = 120;
+  # For this line to work the flake must add `--impure`
+  # isWSL = if lib.filesystem.pathType /etc/wsl.conf == "symlink" then true else false;
 in {
 
   imports = [
@@ -44,6 +46,24 @@ in {
     providers.xclip.enable = true;
     providers.wl-copy.enable = true;
   };
+
+  # extraConfigLua = #lua
+  #   ''
+  #     if vim.fn.has('wsl') == 1 then
+  #         vim.g.clipboard = {
+  #             name = 'WslClipboard',
+  #             copy = {
+  #                 ['+'] = 'clip.exe',
+  #                 ['*'] = 'clip.exe',
+  #             },
+  #             paste = {
+  #                 ['+'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+  #                 ['*'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+  #             },
+  #             cache_enabled = 0,
+  #         }
+  #     end
+  #   ''; 
 
   opts = {
     number = true;

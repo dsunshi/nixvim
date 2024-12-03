@@ -17,6 +17,7 @@
       action = "<cmd>make clean<CR>";
     }
     # Disable F15 ;)
+    # https://nix-community.github.io/nixvim/user-guide/faq.html
     {
       options.desc = "F15 NOP";
       mode = [ "n" "i" "v" "s" "t" "x" "o" "!" "l" "c" ];
