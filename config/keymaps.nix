@@ -16,36 +16,6 @@
       key = "<leader>mc";
       action = "<cmd>make clean<CR>";
     }
-    # Disable F15 ;)
-    # https://nix-community.github.io/nixvim/user-guide/faq.html
-    {
-      options.desc = "F15 NOP";
-      mode = [ "n" "i" "v" "s" "t" "x" "o" "!" "l" "c" ];
-      options.silent = true;
-      key = "<F15>";
-      action = "<Nop>";
-    }
-    {
-      options.desc = "Shift F15 NOP";
-      mode = [ "n" "i" "v" "s" "t" "x" "o" "!" "l" "c" ];
-      options.silent = true;
-      key = "<S-F15>";
-      action = "<Nop>";
-    }
-    {
-      options.desc = "Control F15 NOP";
-      mode = [ "n" "i" "v" "s" "t" "x" "o" "!" "l" "c" ];
-      options.silent = true;
-      key = "<C-F15>";
-      action = "<Nop>";
-    }
-    {
-      options.desc = "Alt F15 NOP";
-      mode = [ "n" "i" "v" "s" "t" "x" "o" "!" "l" "c" ];
-      options.silent = true;
-      key = "<Alt-F15>";
-      action = "<Nop>";
-    }
     # Window management
     {
       options.desc = "Split window vertically";
@@ -75,7 +45,13 @@
       key = "<leader>cl";
       action = "<cmd>TransparentToggle<CR>";
     }
-  ];
+  ] ++ (builtins.map (key: { # Disable 15 ;)
+    inherit key;
+    options.desc = "F15 NOP";
+    mode = [ "n" "i" "v" "s" "t" "x" "o" "!" "l" "c" ];
+    options.silent = true;
+    action = "<Nop>";
+  }) [ "<F15>" "<S-F15>" "<C-F15>" "<A-F15>" "<D-F15>" ]);
 
   keymapsOnEvents = {
     TermOpen = [{
