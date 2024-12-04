@@ -4,17 +4,10 @@
       enable = true;
       settings = {
         sources = [
-          {
-            name = "spell";
-          }
-          # { name = "async_path"; }
-          # { name = "fish"; }
+          { name = "spell"; }
           { name = "nvim_lsp"; }
           { name = "buffer"; }
-          {
-            name = "treesitter";
-          }
-          # { name = "snippy"; }
+          { name = "treesitter"; }
           { name = "luasnip"; }
         ];
 
@@ -22,7 +15,7 @@
         # is selected. Tab cycles through completions, while
         # automatically applying them, however snippets require
         # enter to expand.
-        snippet.expand = #lua
+        snippet.expand = # lua
           "function(args) require'luasnip'.lsp_expand(args.body); end";
         mapping = {
           "<C-p>" = "cmp.mapping.select_prev_item()";
@@ -30,7 +23,7 @@
           "<C-d>" = "cmp.mapping.scroll_docs(-4)";
           "<C-f>" = "cmp.mapping.scroll_docs(4)";
           "<C-e>" = "cmp.mapping.close()";
-          "<C-Space>" = #lua
+          "<C-Space>" = # lua
             ''
             cmp.mapping(function(fallback)
               if cmp.visible() then
@@ -46,7 +39,7 @@
                 fallback()
               end
             end)'';
-          "<Tab>" = #lua
+          "<Tab>" = # lua
             ''
             cmp.mapping(function(fallback)
               if cmp.visible() then
@@ -58,7 +51,7 @@
               end
             end, { "i", "s" })'';
 
-          "<S-Tab>" = #lua
+          "<S-Tab>" = # lua
             ''
             cmp.mapping(function(fallback)
               if cmp.visible() then

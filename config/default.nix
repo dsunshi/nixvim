@@ -1,9 +1,6 @@
-{ _pkgs, lib, ... }:
+{ _pkgs, ... }:
 let
   tabsize = 2;
-  # columnsize = 120;
-  # For this line to work the flake must add `--impure`
-  # isWSL = if lib.filesystem.pathType /etc/wsl.conf == "symlink" then true else false;
 in {
 
   imports = [
@@ -73,8 +70,6 @@ in {
     autoindent = true;
     shiftwidth = tabsize;
     tabstop = tabsize;
-    # textwidth = columnsize;
-    # colorcolumn = builtins.toString columnsize;
     ignorecase = true;
     smartcase = true;
     cursorline = true;
